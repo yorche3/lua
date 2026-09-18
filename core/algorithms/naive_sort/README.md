@@ -14,7 +14,7 @@ Tres algoritmos de ordenación con coste $O(n^2)$: **selection sort**, **bubble 
 | [`.busted`](.busted) | Configuración de Busted — usa `test/` como directorio y acepta el patrón `_test`. |
 | [`.gitignore`](.gitignore) | Ignora los artefactos de proyecto de LuaRocks (`/lua`, `/luarocks`, `/lua_modules`, `/.luarocks`). |
 | [`src/naive_sort.lua`](src/naive_sort.lua) | Módulo `naive_sort` — 3 funciones de ordenación. |
-| [`test/naive_sort_tests.lua`](test/naive_sort_tests.lua) | Suite única: 3 tests (9 casos cada uno). |
+| [`test/naive_sort_tests.lua`](test/naive_sort_tests.lua) | Suite única: 3 tests (8 casos cada uno). |
 
 **Estructura de directorios esperada:**
 
@@ -26,7 +26,7 @@ naive_sort/
 ├── src/
 │   └── naive_sort.lua            # selection_sort, bubble_sort, insertion_sort
 └── test/
-    └── naive_sort_tests.lua      # 3 tests, 9 casos cada uno
+    └── naive_sort_tests.lua      # 3 tests, 8 casos cada uno
 ```
 
 ---
@@ -37,9 +37,9 @@ naive_sort/
 
 **EN:** Follows the same pattern as [`numbers`](../../foundations/numbers/) and [`calculator`](../../foundations/unit_test/calculator/): a Lua module with a LuaRocks rock and Busted tests. The three functions are exposed as fields of a local table (`naive_sort`), exactly like `numbers.lua`.
 
-**Combinación aplicada:** algoritmo iterativo (la especificación no usa recursión) → **1 suite × 3 tests = 3 tests (27 casos)**.
+**Combinación aplicada:** algoritmo iterativo (la especificación no usa recursión) → **1 suite × 3 tests = 3 tests (24 casos)**.
 
-**Applied combination:** iterative algorithm (the specification uses no recursion) → **1 suite × 3 tests = 3 tests (27 cases)**.
+**Applied combination:** iterative algorithm (the specification uses no recursion) → **1 suite × 3 tests = 3 tests (24 cases)**.
 
 ### Inicialización / Initialization
 
@@ -132,7 +132,7 @@ end
 
 ### `test/naive_sort_tests.lua` — Suite de pruebas
 
-**ES:** Una única suite con un `it` por función. Los 9 casos viven en una lista de constantes compartida y un único helper los recorre para cualquier función:
+**ES:** Una única suite con un `it` por función. Los 8 casos viven en una lista de constantes compartida y un único helper los recorre para cualquier función:
 
 **EN:** A single suite with one `it` per function. The 9 cases live in a shared list of constants and a single helper walks them for any function:
 
@@ -214,8 +214,8 @@ luarocks make naive_sort-1.0.0-1.rockspec
 3 successes / 0 failures / 0 errors / 0 pending : 0.000791 seconds
 ```
 
-> **ES:** 3 tests en total (uno por algoritmo); los 27 casos viven como aserciones dentro de ellos (9 por algoritmo), todos pasando.
-> **EN:** 3 tests in total (one per algorithm); the 27 cases live as assertions within them (9 per algorithm), all passing.
+> **ES:** 3 tests en total (uno por algoritmo); los 24 casos viven como aserciones dentro de ellos (8 por algoritmo), todos pasando.
+> **EN:** 3 tests in total (one per algorithm); the 24 cases live as assertions within them (8 per algorithm), all passing.
 
 ---
 

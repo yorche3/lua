@@ -25,7 +25,7 @@ algorithms/
     ├── src/
     │   └── naive_sort.lua               # selection_sort, bubble_sort, insertion_sort
     ├── test/
-    │   └── naive_sort_tests.lua         # 3 tests × 9 casos
+    │   └── naive_sort_tests.lua         # 3 tests × 8 casos
     └── README.md
 ```
 

@@ -11,6 +11,7 @@ Los módulos de esta fase trabajan sobre tablas Lua, que **son mutables**, **se 
 | Módulo | Especificación | Enfoque | Tests | Estado |
 |--------|---------------|---------|:-----:|:------:|
 | [`naive_sort/`](naive_sort/) | [05_Naive_Sort](https://yorche3.github.io/programming_languages/core/algorithms/05_Naive_Sort/) | `busted` + LuaRocks | 3 | ✅ |
+| [`data_structures_basics/`](data_structures_basics/) | [06_Data_Structures_Basics](https://yorche3.github.io/programming_languages/core/algorithms/06_Data_Structures_Basics/) | `busted` + LuaRocks | 4 | ✅ |
 
 ---
 
@@ -18,14 +19,22 @@ Los módulos de esta fase trabajan sobre tablas Lua, que **son mutables**, **se 
 
 ```text
 algorithms/
-└── naive_sort/                          # 05_Naive_Sort
-    ├── naive_sort-1.0.0-1.rockspec      # Rock de LuaRocks
-    ├── .busted                          # ROOT = {"test"}, pattern = {"_test","_spec"}
-    ├── .gitignore                       # Artefactos de proyecto de LuaRocks
+├── naive_sort/                          # 05_Naive_Sort
+│   ├── naive_sort-1.0.0-1.rockspec      # Rock de LuaRocks
+│   ├── .busted                          # ROOT = {"test"}, pattern = {"_test","_spec"}
+│   ├── .gitignore                       # Artefactos de proyecto de LuaRocks
+│   ├── src/
+│   │   └── naive_sort.lua               # selection_sort, bubble_sort, insertion_sort
+│   ├── test/
+│   │   └── naive_sort_tests.lua         # 3 tests × 8 casos
+│   └── README.md
+└── data_structures_basics/              # 06_Data_Structures_Basics
+    ├── data_structures_basics-1.0.0-1.rockspec
+    ├── .busted
     ├── src/
-    │   └── naive_sort.lua               # selection_sort, bubble_sort, insertion_sort
+    │   └── data_structures_basics/      # init.lua, node.lua, linked_list.lua, stack.lua, queue.lua
     ├── test/
-    │   └── naive_sort_tests.lua         # 3 tests × 8 casos
+    │   └── data_structures_basics_tests.lua  # 4 tests
     └── README.md
 ```
 
@@ -62,6 +71,10 @@ eval "$(luarocks path)"
 
 # Naive Sort Tests
 cd naive_sort
+busted
+
+# Data Structures Basics Tests
+cd data_structures_basics
 busted
 ```
 

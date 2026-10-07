@@ -25,30 +25,40 @@ end
 --- Apila el valor sobre el tope (push).
 -- @param value number
 function Stack:push(value)
+    local new_node = Node.new(value)
+    new_node.next = self.top
+    self.top = new_node
+    self.count = self.count + 1
 end
 
 --- Extrae el tope, o -1 cuando la pila está vacía (pop).
 -- @return number
 function Stack:pop()
-    return -1
+    if not self.top then
+        return -1
+    end
+    local value = self.top.value
+    self.top = self.top.next
+    self.count = self.count - 1
+    return value
 end
 
 --- Observa el tope sin extraerlo, o -1 cuando la pila está vacía (peek).
 -- @return number
 function Stack:peek()
-    return -1
+    return self.top and self.top.value or -1
 end
 
 --- Informa si la pila no tiene nodos (is_empty).
 -- @return boolean
 function Stack:is_empty()
-    return false
+    return self.count == 0
 end
 
 --- Número de nodos de la pila (size).
 -- @return number
 function Stack:size()
-    return 0
+    return self.count
 end
 
 return Stack

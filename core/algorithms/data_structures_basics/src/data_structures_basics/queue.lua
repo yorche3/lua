@@ -26,30 +26,48 @@ end
 --- Añade el valor por el final de la cola (enqueue).
 -- @param value number
 function Queue:enqueue(value)
+    local new_node = Node.new(value)
+    if not self.front then
+        self.front = new_node
+        self.rear = new_node
+    else
+        self.rear.next = new_node
+        self.rear = new_node
+    end
+    self.count = self.count + 1
 end
 
 --- Extrae el frente, o -1 cuando la cola está vacía (dequeue).
 -- @return number
 function Queue:dequeue()
-    return -1
+    if not self.front then
+        return -1
+    end
+    local value = self.front.value
+    self.front = self.front.next
+    if not self.front then
+        self.rear = nil
+    end
+    self.count = self.count - 1
+    return value
 end
 
 --- Observa el frente sin extraerlo, o -1 cuando la cola está vacía (peek).
 -- @return number
 function Queue:peek()
-    return -1
+    return self.front and self.front.value or -1
 end
 
 --- Informa si la cola no tiene nodos (is_empty).
 -- @return boolean
 function Queue:is_empty()
-    return false
+    return self.count == 0
 end
 
 --- Número de nodos de la cola (size).
 -- @return number
 function Queue:size()
-    return 0
+    return self.count
 end
 
 return Queue

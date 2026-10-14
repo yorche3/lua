@@ -8,13 +8,13 @@ Implementación de la especificación [01_Hello_World](https://yorche3.github.io
 
 | Archivo | Propósito |
 |---------|-----------|
-| [`helloworld.lua`](helloworld.lua) | Código fuente: imprime `"Hello, World! from Lua!"` en la salida estándar. |
+| [`hello_world.lua`](hello_world.lua) | Código fuente: imprime `"Hello, World! from Lua!"` en la salida estándar. |
 
 **Estructura de directorios esperada:**
 
 ```text
 helloworld/
-├── helloworld.lua   # Código fuente
+├── hello_world.lua   # Código fuente
 └── README.md        # Este archivo
 ```
 
@@ -34,7 +34,7 @@ helloworld/
    mkdir -p lua/core/foundations/helloworld
    ```
 
-2. Escribir el archivo `helloworld.lua` con el código fuente.
+2. Escribir el archivo `hello_world.lua` con el código fuente.
 
 3. No se necesita ningún paso adicional de construcción o vinculación de dependencias.
 
@@ -71,7 +71,7 @@ lua -v
 
 ```bash
 cd lua/core/foundations/helloworld
-lua helloworld.lua
+lua hello_world.lua
 ```
 
 ### Precompilar con `luac` (opcional) / Precompile with `luac` (optional)
@@ -82,12 +82,12 @@ lua helloworld.lua
 
 ```bash
 cd lua/core/foundations/helloworld
-luac -o helloworld.luac helloworld.lua
-lua helloworld.luac
+luac -o hello_world.luac hello_world.lua
+lua hello_world.luac
 ```
 
-> **ES:** Si se ejecuta `luac helloworld.lua` sin `-o`, el bytecode se guarda como `luac.out` (ya ignorado en el `.gitignore`).
-> **EN:** If `luac helloworld.lua` is run without `-o`, the bytecode is saved as `luac.out` (already ignored in `.gitignore`).
+> **ES:** Si se ejecuta `luac hello_world.lua` sin `-o`, el bytecode se guarda como `luac.out` (ya ignorado en el `.gitignore`).
+> **EN:** If `luac hello_world.lua` is run without `-o`, the bytecode is saved as `luac.out` (already ignored in `.gitignore`).
 
 ### Salida esperada / Expected output
 

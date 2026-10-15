@@ -10,13 +10,13 @@ Lee un nombre desde la entrada estándar y saluda al usuario.
 
 | Archivo | Propósito |
 |---------|-----------|
-| [`hellouser.lua`](hellouser.lua) | Código fuente: solicita un nombre al usuario y saluda. |
+| [`hello_user.lua`](hello_user.lua) | Código fuente: solicita un nombre al usuario y saluda. |
 
 **Estructura de directorios esperada:**
 
 ```text
 hellouser/
-├── hellouser.lua   # Código fuente
+├── hello_user.lua   # Código fuente
 └── README.md       # Este archivo
 ```
 
@@ -44,7 +44,7 @@ hellouser/
    mkdir -p lua/core/foundations/hellouser
    ```
 
-2. Escribir el archivo `hellouser.lua` con el código fuente.
+2. Escribir el archivo `hello_user.lua` con el código fuente.
 
 3. No se necesita ningún paso adicional de construcción o vinculación de dependencias.
 
@@ -101,7 +101,7 @@ lua -v
 
 ```bash
 cd lua/core/foundations/hellouser
-lua hellouser.lua
+lua hello_user.lua
 ```
 
 ### Salida esperada / Expected output

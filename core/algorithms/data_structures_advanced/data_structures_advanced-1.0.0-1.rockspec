@@ -1,5 +1,5 @@
 package = "data_structures_advanced"
-version = "dev-1"
+version = "1.0.0-1"
 source = {
    url = "git+ssh://git@github.com/yorche3/lua.git"
 }

@@ -266,6 +266,24 @@ describe("Graph", function()
         assertCounts(graph, oneCount, noCount, "Graph")
     end)
 
+    it("Aislamiento del resultado de vecinos", function()
+        local graph = newGraph({ vertexA, vertexB, vertexC })
+        assert.is_true(graph:add_edge(vertexA, vertexB), "Graph should succeed adding edge 10-30")
+        local saved = graph:get_neighbors(vertexA)
+        assert.are.same({ vertexB }, saved, "Graph should return [30] as neighbours of 10")
+
+        local copy = graph:get_neighbors(vertexA)
+        copy[1] = missingVertex
+        assert.are.same({ vertexB }, graph:get_neighbors(vertexA),
+            "Graph should not change when a returned copy is mutated")
+
+        assert.is_true(graph:add_edge(vertexA, vertexC), "Graph should succeed adding edge 10-50")
+        assert.are.same({ vertexB }, saved, "Graph should keep the saved result as [30]")
+        assert.are.same({ vertexB, vertexC }, graph:get_neighbors(vertexA),
+            "Graph should have [30, 50] as fresh neighbours of 10")
+        assertCounts(graph, 3, 2, "Graph")
+    end)
+
     it("Bucle y duplicado", function()
         local graph = Graph.new()
         assert.is_true(graph:add_vertex(vertexA), "Graph should succeed adding vertex 10")

@@ -4,34 +4,36 @@ TreeNode.__index = TreeNode
 --- @param value integer
 --- @return TreeNode
 function TreeNode.new(value)
-    return nil
+    return setmetatable({ value = value, left = nil, right = nil }, TreeNode)
 end
 
 --- @return integer
 function TreeNode:get_value()
-    return nil
+    return self.value
 end
 
 --- @return TreeNode|nil
 function TreeNode:get_left()
-    return nil
+    return self.left
 end
 
 --- @return TreeNode|nil
 function TreeNode:get_right()
-    return nil
+    return self.right
 end
 
 --- @param node TreeNode|nil
 --- @return TreeNode
 function TreeNode:set_left(node)
-    return nil
+    self.left = node
+    return self
 end
 
 --- @param node TreeNode|nil
 --- @return TreeNode
 function TreeNode:set_right(node)
-    return nil
+    self.right = node
+    return self
 end
 
 return TreeNode

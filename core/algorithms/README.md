@@ -12,6 +12,7 @@ Los módulos de esta fase trabajan sobre tablas Lua, que **son mutables**, **se 
 |--------|---------------|---------|:-----:|:------:|
 | [`naive_sort/`](naive_sort/) | [05_Naive_Sort](https://yorche3.github.io/programming_languages/core/algorithms/05_Naive_Sort/) | `busted` + LuaRocks | 3 | ✅ |
 | [`data_structures_basics/`](data_structures_basics/) | [06_Data_Structures_Basics](https://yorche3.github.io/programming_languages/core/algorithms/06_Data_Structures_Basics/) | `busted` + LuaRocks | 4 | ✅ |
+| [`data_structures_advanced/`](data_structures_advanced/) | [07_Data_Structures_Advanced](https://yorche3.github.io/programming_languages/core/algorithms/07_Data_Structures_Advanced/) | `busted` + LuaRocks | 23 | ✅ |
 
 ---
 
@@ -28,13 +29,21 @@ algorithms/
 │   ├── test/
 │   │   └── naive_sort_tests.lua         # 3 tests × 8 casos
 │   └── README.md
-└── data_structures_basics/              # 06_Data_Structures_Basics
+├── data_structures_basics/              # 06_Data_Structures_Basics
     ├── data_structures_basics-1.0.0-1.rockspec
     ├── .busted
     ├── src/
     │   └── data_structures_basics/      # init.lua, node.lua, linked_list.lua, stack.lua, queue.lua
     ├── test/
     │   └── data_structures_basics_tests.lua  # 4 tests
+    └── README.md
+└── data_structures_advanced/            # 07_Data_Structures_Advanced
+    ├── data_structures_advanced-1.0.0-1.rockspec
+    ├── .busted
+    ├── src/
+    │   └── data_structures_advanced/    # init.lua, tree_node.lua, binary_tree.lua, graph.lua
+    ├── test/
+    │   └── data_structures_advanced_tests.lua  # 23 tests
     └── README.md
 ```
 
@@ -75,6 +84,10 @@ busted
 
 # Data Structures Basics Tests
 cd data_structures_basics
+busted
+
+# Data Structures Advanced Tests
+cd data_structures_advanced
 busted
 ```
 
